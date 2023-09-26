@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2021 Project Serasa
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/lockscreen_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceCategory
+        android:key="lockscreen_interface_category"
+        android:title="@string/lockscreen_interface_category">
+
+        <lineageos.preference.LineageSecureSettingSwitchPreference
+            android:key="lockscreen_media_metadata"
+            android:title="@string/media_art_title"
+            android:summary="@string/media_art_summary"
+            android:defaultValue="false" />
+
+    <com.serasa.settings.preferences.SystemSettingListPreference
+        android:key="lockscreen_albumart_filter"
+        android:title="@string/lockscreen_albumart_filter_title"
+        android:entries="@array/lockscreen_albumart_filter_entries"
+        android:entryValues="@array/lockscreen_albumart_filter_values"
+        android:dependency="lockscreen_media_metadata"
+        android:defaultValue="0" />
+
+     <com.serasa.settings.preferences.SystemSettingSeekBarPreference
+        android:key="ls_media_filter_blur_radius"
+        android:title="@string/lockscreen_albumart_filter_blur_radius_title"
+        android:dependency="lockscreen_media_metadata"
+        android:defaultValue="125"
+        android:max="125"
+        settings:min="2" />
+
+     <com.serasa.settings.preferences.SystemSettingSeekBarPreference
+        android:key="ls_media_artwork_fade_percent"
+        android:title="@string/ls_media_artwork_fade_percent_title"
+        android:dependency="lockscreen_media_metadata"
+        android:defaultValue="30"
+        android:max="80"
+        settings:min="1" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+         android:title="@string/charging_category">
+
+        <com.serasa.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_battery_info"
+            android:title="@string/lockscreen_battery_info_title"
+            android:summary="@string/lockscreen_battery_info_summary"
+            android:defaultValue="true" />
+
+    <!-- Charging animation -->
+    <com.serasa.settings.preferences.SystemSettingSwitchPreference
+        android:key="charging_animation"
+        android:title="@string/charging_animation_title"
+        android:summary="@string/charging_animation_summary"
+        android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/weather_category">
+
+  <Preference
+        android:key="omnijaws_settings"
+        android:title="@string/weather_settings_title"
+        android:summary="@string/weather_settings_summary"
+        android:fragment="com.serasa.settings.fragments.OmniJawsSettings" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/lock_screen_custom_clock_face_category">
+
+        <!-- Clock Font style -->
+        <Preference
+            android:key="android.theme.customization.clock.fonts"
+            android:title="@string/theme_customization_clock_font_title"
+            android:summary="@string/theme_customization_clock_font_summary"
+            android:fragment="com.serasa.settings.fragments.LockScreenClockPicker" />
+
+        <!-- Date Font style -->
+        <Preference
+            android:key="android.theme.customization.date.fonts"
+            android:title="@string/theme_customization_date_font_title"
+            android:summary="@string/theme_customization_date_font_summary"
+            android:fragment="com.serasa.settings.fragments.DateFontsPicker" />
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:key="lockscreen_misc_category"
+        android:title="@string/misc_title">
+
+        <com.serasa.settings.preferences.SystemPropertySwitchPreference
+            android:key="persist.sys.flags.enableBouncerUserSwitcher"
+            android:title="@string/lockscreen_user_switcher_title"
+            android:summary="@string/lockscreen_user_switcher_summary"
+            android:defaultValue="true" />
+
+        <com.serasa.settings.preferences.SystemSettingSwitchPreference
+            android:key="enable_ripple_effect"
+            android:title="@string/enable_fingerprint_ripple_effect_title"
+            android:summary="@string/enable_fingerprint_ripple_effect_summary"
+            android:defaultValue="true" />
+
+        <com.serasa.settings.preferences.SystemSettingSwitchPreference
+            android:key="ambient_icons_lockscreen"
+            android:title="@string/ambient_icons_lockscreen_title"
+            android:summary="@string/ambient_icons_lockscreen_summary"
+            android:defaultValue="false" />
+
+        <com.serasa.settings.preferences.SystemSettingSeekBarPreference
+            android:key="ambient_icons_size"
+            android:title="@string/ambient_icons_size_title"
+            android:dependency="ambient_icons_lockscreen"
+            android:max="100"
+            settings:min="0"
+            settings:units="dp"
+            settings:interval="1"
+            android:defaultValue="80" />
+
+        <com.serasa.settings.preferences.colorpicker.SystemSettingColorPickerPreference
+            android:key="ambient_icons_color"
+            android:title="@string/ambient_icons_color_title"
+            android:dependency="ambient_icons_lockscreen"
+            android:defaultValue="0xFFFFFFFF" />
+
+        <com.serasa.settings.preferences.SystemSettingSwitchPreference
+            android:key="secure_lockscreen_qs_disabled"
+            android:title="@string/disable_qs_title"
+            android:defaultValue="false"
+            android:summary="@string/disable_qs_summary"/>
+
+        <com.serasa.settings.preferences.SystemSettingSwitchPreference
+               android:key="lockscreen_enable_power_menu"
+               android:title="@string/lockscreen_enable_power_menu_title"
+               android:summary="@string/lockscreen_enable_power_menu_summary"
+               android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <!-- Udfps options -->
+    <PreferenceCategory
+        android:key="udfps_category"
+        android:title="@string/udfps_category">
+
+        <Preference
+            android:key="udfps_settings"
+            android:title="@string/udfps_settings_title"
+            android:summary="@string/udfps_settings_summary"
+            android:fragment="com.serasa.settings.fragments.Udfps" />
+
+    </PreferenceCategory>
+
+    <!-- Pulse music visualizer -->
+    <Preference
+        android:key="pulse_settings"
+        android:title="@string/pulse_settings"
+        android:summary="@string/pulse_settings_summary"
+        android:fragment="com.serasa.settings.fragments.PulseSettings" />
+
+    <Preference
+         android:key="ambient_customization"
+         android:title="@string/ambient_text_category_title"
+         android:summary="@string/ambient_text_category_summary"
+         android:fragment="com.serasa.settings.fragments.AmbientCustomizations" />
+
+</PreferenceScreen>

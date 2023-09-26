@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2021 Project Serasa
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/misc_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceCategory
+        android:key="misc_general_category"
+        android:title="@string/general_category">
+
+    <!-- Gaming mode -->
+    <Preference
+        android:key="gaming_mode"
+        android:title="@string/gaming_mode_title"
+        android:summary="@string/gaming_mode_summary">
+
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="io.chaldeaprjkt.gamespace"
+            android:targetClass="io.chaldeaprjkt.gamespace.settings.SettingsActivity" />
+    </Preference>
+
+    <!-- Display Cutout -->
+    <Preference
+        android:key="display_cutout_force_fullscreen_settings"
+        android:title="@string/display_cutout_force_fullscreen_title"
+        android:summary="@string/display_cutout_force_fullscreen_summary">
+        <intent android:action="android.intent.action.MAIN"
+             android:targetPackage="com.android.settings"
+             android:targetClass="com.serasa.settings.fragments.DisplayCutoutForceFullscreenActivity"/>
+    </Preference>
+
+    <!-- Smart Pixels -->
+    <Preference
+        android:key="smart_pixels"
+        android:title="@string/smart_pixels_title" 
+        android:summary="@string/smart_pixels_summary" 
+        android:fragment="com.serasa.settings.fragments.SmartPixels" />
+
+    <!-- System Manager Services -->
+    <Preference
+        android:key="system_manager_settings"
+        android:title="@string/system_manager_services_title"
+        android:summary="@string/system_manager_services_summary"
+        android:fragment="com.serasa.settings.fragments.SystemManagerSettings" />
+
+    <!-- Sensor block per package -->
+    <Preference
+        android:key="sensor_block_settings"
+        android:title="@string/sensor_block_title"
+        android:summary="@string/sensor_block_summary"
+        android:fragment="com.serasa.settings.fragments.SensorBlock"/>
+
+
+    <!-- Google services -->
+    <Preference
+        android:key="gms_enabled_settings"
+        android:title="@string/gms_enabled_title"
+        android:summary="@string/gms_enabled_summary"
+        android:fragment="com.serasa.settings.fragments.GmsSwitch"/>
+
+    <!-- Parallel space -->
+    <Preference
+        android:key="parallel_space"
+        android:title="@string/laboratory_parallel_space_title"
+        android:summary="@string/laboratory_parallel_space_summary">
+        <intent
+            android:targetPackage="ink.kscope.parallelspace"
+            android:targetClass="ink.kscope.parallelspace.MainActivity" />
+    </Preference>
+
+   </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="animations_category"
+        android:title="@string/animations_category">
+
+    <!-- Screen Off animation -->
+    <com.serasa.settings.preferences.SystemSettingListPreference
+        android:key="screen_off_animation"
+        android:title="@string/screen_off_animation_title"
+        android:dialogTitle="@string/screen_off_animation_title"
+        android:entries="@array/screen_off_animation_entries"
+        android:entryValues="@array/screen_off_animation_values"
+        android:defaultValue="0" />
+
+    <com.serasa.settings.preferences.SystemSettingListPreference
+        android:key="toast_animation"
+        android:title="@string/toast_animation_title"
+        android:dialogTitle="@string/toast_animation_title"
+        android:entries="@array/toast_animation_entries"
+        android:entryValues="@array/toast_animation_values"
+        android:summary="%s"
+        android:defaultValue="1" />
+
+    <com.serasa.settings.preferences.GlobalSettingSwitchPreference
+        android:key="pie_animation_style"
+        android:title="@string/pie_animation_style_title"
+        android:summary="@string/pie_animation_style_summary"
+        android:defaultValue="false" />
+
+   </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="light_brightness"
+        android:title="@string/light_brightness_category">
+
+        <!-- Battery light -->
+        <Preference
+            android:key="battery_lights"
+            android:title="@string/battery_light_title"
+            android:summary="@string/battery_light_summary"
+            android:fragment="com.serasa.settings.fragments.BatteryLightSettings" />
+
+        <!-- Notification lights -->
+        <Preference
+            android:key="notification_lights"
+            android:title="@string/notification_light_title"
+            android:summary="@string/notification_light_summary"
+            android:fragment="com.serasa.settings.fragments.NotificationLightSettings" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="misc_general_category"
+        android:title="@string/general_category">
+
+    <!-- Squiggle animation -->
+    <com.serasa.settings.preferences.SecureSettingSwitchPreference
+        android:key="hide_media_squiggle_animation"
+        android:title="@string/hide_squiggle_animation_title"
+        android:summary="@string/hide_squiggle_animation_summary"
+        android:defaultValue="false" />
+
+    <com.serasa.settings.preferences.SystemPropertySwitchPreference
+        android:key="persist.serasa.hosts_block"
+        android:title="@string/hosts_block_title"
+        android:summary="@string/hosts_block_summary"
+        android:defaultValue="false" />
+
+   </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="spoof_category"
+        android:title="@string/spoof_title">
+
+    <!-- Unlock FPS for specific games -->
+    <com.serasa.settings.preferences.SystemPropertySwitchPreference
+        android:key="persist.sys.pixelprops.games"
+        android:title="@string/use_games_spoof_title"
+        android:summary="@string/use_games_spoof_summary"
+        android:defaultValue="false" />
+
+    <!-- Unlimited google photos storage -->
+    <com.serasa.settings.preferences.SystemPropertySwitchPreference
+        android:key="persist.sys.pixelprops.gphotos"
+        android:title="@string/use_photos_spoof_title"
+        android:summary="@string/use_photos_spoof_summary"
+        android:defaultValue="true" />
+
+    <!-- Netflix -->
+    <com.serasa.settings.preferences.SystemPropertySwitchPreference
+        android:key="persist.sys.pixelprops.netflix"
+        android:title="@string/netflix_spoof_title"
+        android:summary="@string/netflix_spoof_summary"
+        android:defaultValue="false" />
+
+   </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="flashlight_category"
+        android:title="@string/power_menu_torch_title">
+
+        <com.serasa.settings.preferences.SystemSettingListPreference
+            android:key="flashlight_on_call"
+            android:title="@string/flashlight_on_call_title"
+            android:entries="@array/flashlight_on_call_entries"
+            android:entryValues="@array/flashlight_on_call_values"
+            android:defaultValue="0" />
+
+        <com.serasa.settings.preferences.SystemSettingSwitchPreference
+            android:key="flashlight_on_call_ignore_dnd"
+            android:title="@string/flashlight_on_call_ignore_dnd_title"
+            android:summary="@string/flashlight_on_call_ignore_dnd_summary"
+            android:defaultValue="false" /> 
+
+        <com.serasa.settings.preferences.SystemSettingSeekBarPreference
+            android:key="flashlight_on_call_rate"
+            android:title="@string/flashlight_on_call_rate_title"
+            android:defaultValue="1"
+            android:max="5"
+            settings:min="1"
+            settings:units="@string/unit_hz" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="buttons"
+        android:title="@string/buttons_category">
+
+        <!-- Button Settings -->
+        <Preference
+            android:key="buttonsettings"
+            android:title="@string/buttons_title"
+            android:summary="@string/buttons_summary"
+            android:fragment="com.serasa.settings.fragments.Buttons" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

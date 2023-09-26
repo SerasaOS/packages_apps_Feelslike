@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 Serasa
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/udfps_category">
+
+    <com.serasa.settings.preferences.SystemSettingSwitchPreference
+        android:key="udfps_haptic_feedback"
+        android:title="@string/udfps_haptic_feedback_title"
+        android:summary="@string/udfps_haptic_feedback_summary"
+        android:defaultValue="true" />
+
+    <com.serasa.settings.preferences.SecureSettingSwitchPreference
+        android:key="screen_off_udfps_enabled"
+        android:title="@string/screen_off_udfps_title"
+        android:summary="@string/screen_off_udfps_summary"
+        android:defaultValue="false" />
+
+    <PreferenceCategory
+        android:key="udfps_customization"
+        android:title="@string/udfps_customization">
+
+        <Preference
+            android:key="udfps_icon_picker"
+            android:title="@string/udfps_icon_picker_title"
+            android:summary="@string/udfps_icon_picker_summary"
+            android:fragment="com.serasa.settings.fragments.UdfpsIconPicker" />
+
+        <com.serasa.settings.preferences.SystemSettingSwitchPreference
+            android:key="custom_fp_icon_enabled"
+            android:title="@string/custom_fp_icon_title"
+            android:summary="@string/custom_fp_icon_summary"
+            android:defaultValue="false" />
+
+        <Preference
+            android:key="custom_fp_file_select"
+            android:title="@string/custom_fp_select_title"
+            android:summary="@string/custom_fp_select_summary"
+            android:dependency="custom_fp_icon_enabled"
+            android:persistent="false">
+        </Preference>
+
+        <Preference
+            android:key="udfps_recognizing_animation_preview"
+            android:title="@string/udfps_recog_animation_effect_title"
+            android:summary="@string/udfps_recog_animation_effect_summary"
+            android:fragment="com.serasa.settings.fragments.UdfpsAnimation" />
+
+    <Preference
+            android:key="udfps_pressedicon_picker"
+            android:title="@string/udfps_pressed_color_title"
+            android:summary="@string/udfps_pressed_color_summary"
+            android:fragment="com.serasa.settings.fragments.UdfpsPressedIconPicker" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
