@@ -12,20 +12,23 @@
         android:layout_width="300dp"
         android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
             	android:id="@+id/themesettings_card"
-                android:layout_width="0dp"
-                android:layout_height="160dp"
+                android:layout_width="160dp"
+                android:layout_height="200dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:layout_marginBottom="8dp"
+                android:layout_gravity="center"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -42,8 +45,9 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center"
                         android:src="@drawable/feelslike_a12_dark__card_themes"
                         app:tint="#fff" />
 
@@ -53,10 +57,12 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/lockscreensettings_card"
-                android:layout_width="0dp"
-                android:layout_height="160dp"
+                android:layout_width="160dp"
+                android:layout_height="200dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:layout_marginBottom="8dp"
+                android:layout_gravity="center"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -73,8 +79,9 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center"
                         android:src="@drawable/feelslike_a12_dark__card_lockscreen"
                         app:tint="#fff" />
                 </LinearLayout>
@@ -85,14 +92,16 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
             	android:id="@+id/statusbarsettings_card"
-                android:layout_width="0dp"
-                android:layout_height="160dp"
+                android:layout_width="160dp"
+                android:layout_height="200dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:layout_marginBottom="8dp"
+                android:layout_gravity="center"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -109,8 +118,9 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center"
                         android:src="@drawable/feelslike_a12_dark__card_statusbar"
                         app:tint="#fff" />
                 </LinearLayout>
@@ -119,10 +129,12 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/gesturesettings_card"
-                android:layout_width="0dp"
-                android:layout_height="160dp"
+                android:layout_width="160dp"
+                android:layout_height="200dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:layout_marginBottom="8dp"
+                android:layout_gravity="center"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -139,8 +151,9 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center"
                         android:src="@drawable/feelslike_a12_dark__card_gestures"
                         app:tint="#fff" />
                 </LinearLayout>
@@ -151,14 +164,16 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/miscsettings_card" 
-                android:layout_width="0dp"
-                android:layout_height="160dp"
+                android:id="@+id/miscsettings_card"
+                android:layout_width="160dp"
+                android:layout_height="200dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:layout_marginBottom="8dp"
+                android:layout_gravity="center"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -175,8 +190,9 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center"
                         android:src="@drawable/feelslike_a12_dark__card_misc"
                         app:tint="#fff" />
                 </LinearLayout>
@@ -185,10 +201,12 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/powersettings_card"
-                android:layout_width="0dp"
-                android:layout_height="160dp"
+                android:layout_width="160dp"
+                android:layout_height="200dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:layout_marginBottom="8dp"
+                android:layout_gravity="center"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -205,8 +223,9 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center"
                         android:src="@drawable/feelslike_a12_dark__card_powermenu"
                         app:tint="#fff" />
                 </LinearLayout>
